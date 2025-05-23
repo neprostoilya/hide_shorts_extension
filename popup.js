@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     chrome.storage.sync.get(['shortsHidden'], function(result) {
         const isEnabled = result.shortsHidden || false;
         toggleBtn.checked = isEnabled;
-        
+         
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             const tab = tabs[0];
             if (tab && tab.url.includes("https://www.youtube.com/")) {
